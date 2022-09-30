@@ -1,0 +1,67 @@
+Q1)    Priority Queue adds on element on the queue and it is added without any sorted form, we can sort it with the help of poll() method or remove() method but without that 
+it is sorted in natural way.
+
+also in Priority Queue the null insertion is not possible even a single null aslo, and inside the priority queue if we want any element then that element should be
+comparable, or we can use comparator otherwise we will get classCast exception.
+
+In case of LinkedList ther is no class Cast exception if we define and add to it Also we can use queue as a LinkedList which will work according to normal queue
+(FIFO) and there will be no need to used comparator for that in order to sort the elements.
+
+
+
+
+
+
+
+
+
+
+Q2) the main Objective of generics is  TypeSafety, that makes the code  stable by detecting the bugs at compile time. 
+Generics concpets mostly used with collection framework related classes but we can apply generics concept without collection f/w also.
+
+Since generics concept is not applicable with primitive datatypes, it supports only objects.
+
+we can also create our won generic classes or generic methods that class or method can work with any kind of data.
+
+
+Example:
+
+
+
+
+
+public class MyGen<T>{
+
+
+	T Data;
+
+	public MyGen(T Data){
+	
+		this.Data=Data;
+	}
+
+	public T getData(){
+	
+	return Data;
+	}
+
+
+}
+
+
+public class Demo{
+
+public static void main(String[] args){
+
+
+		
+	MyGen<Integer> m1=new MyGen<>(10);
+	System.out.println(m1);// here we will get the output as 10.
+
+	
+	Mygen<String>m2= new MyGen<>("Welcome");
+	System.out.println(m2);// here we will get the output as Welcome
+
+
+}
+}

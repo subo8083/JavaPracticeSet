@@ -1,0 +1,35 @@
+Question 2) ans: Binding:- the process of connecting method body with method call is called as binding.
+  	
+
+there are two types of binding:
+1) Early binding
+2) Late binding:
+
+
+Early binding: if the method is decided at the compile time then it will be called as early binding which is(static polymorphism). method overloading involves in this.
+
+LAte binding: If the method is decided by the jVM at the run time then it will be called as LAte binding(Dynamic polymorphism). method overriding involves in this.
+
+
+example
+=========
+
+
+if we override toString method()
+
+public class Student{
+
+@Override
+public String toString(){
+	System.out.println("Welcome")
+}
+
+
+public class Demo{
+
+	Demo d1=new Demo();
+	System.out.println(d1);// Welcome
+}
+
+after calling toString method we will get welcome but if we create object in Demo class then calling that Demo object we should get Address of that object but in that case also we will get 
+Welcome due to dynamic polymorphism and this method is decied at run time which is called as late binding.

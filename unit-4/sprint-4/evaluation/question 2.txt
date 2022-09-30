@@ -1,0 +1,33 @@
+Q2) explanation about HashCode And Equals method();
+
+
+since Equal method belongs to the object class; and can be  implemented as:
+
+public boolean equals(Object obj)
+{
+	return obj==this;
+}
+
+this bequals method should be overriden in the parent class so that we can compare one object to another also we can make our objects logically equal so this should be overriden.
+
+but alone this is not sufficient as we also need to override hashCode method as hashcode() and equals() both are "Best Friend" 
+
+Equals method is like a contract if we override the equals() to make our objects logically equal then we also have to override the hashCode() method.
+
+
+
+
+since if talk about physically then if we create some objects like:
+
+HaseSet<Student> hs=new HashSet<>();
+hs.add(new Student(10,"name",777);
+hs.add(new Student(10,"name",777);
+hs.add(new Student(10,"name",777);
+hs.add(new Student(10,"name",777);
+
+now we can see that here we have addded 4 objects but if we proceed to check the size then the size will be 4, it will also count the duplicates but if we logically override the 
+hashCode and equasls() method then the size will be only 1.
+
+as from the add() method of the hashSet class both equals() and hashCode() are called if both objects equals will return then their hasCode value should return the same value for both
+the objects so to override that we need to take care that it should return same value for all the similar objects.
+

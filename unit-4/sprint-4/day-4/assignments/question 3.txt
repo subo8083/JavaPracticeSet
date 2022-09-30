@@ -1,0 +1,29 @@
+Q3) Diffference between comparable and comparator:
+
+
+
+
+comparable     
+===================                                                             
+ 
+1) comparable provides the single sorting sequence , in other words we can sort selection on the basis of a single element such as Id,name,or price;
+
+2) Comparable effects the original class, i.e, the actual class is modified.
+
+3) Comparable provides compareTo() method to sort elements.
+
+4) Comparable is present in java.lang package.
+
+
+
+
+comparator 
+===================
+
+1) The Comparator provides multiple sorting sequences. In other words, we can sort the collection on the basis of multiple elements such as id, name, and price etc.
+
+2) Comparator doesn't affect the original class, i.e., the actual class is not modified.
+
+3) Comparator provides compare() method to sort elements.
+
+4) A Comparator is present in the java.util package.

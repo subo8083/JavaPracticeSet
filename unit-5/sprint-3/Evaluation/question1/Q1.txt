@@ -1,0 +1,129 @@
+The lock without key in multithreading is called as deadlock. Since each object is having its lock, that might be object level lock or may might be class level lock and if that lock 
+is without key then there may be a chance of deadlock.
+
+The main reason of deadlock is the Synchronized keyword, because if we mention synchronized in any method then the thread will release the lock until it is completed so the other thread
+will remain in waiting state until the synchronized method releases the lock.(It is containing the object of another class) but suppose if another method used the same synchronized keyword and that method also require the object that is
+present inside the above method then both will be in waiting state and it will remain in that till infinite loop.
+
+Taking an example:
+
+
+	A.java
+===========================
+
+	public class A {
+	
+	public synchronized void funA(B b1) {
+		
+		System.out.println("Inside funA()");
+		b1.fun2();
+		
+	}
+	public synchronized void fun1() {
+		System.out.println("Inside Fun1");
+		
+	}
+
+}
+
+	
+		B.java
+======================================
+
+public class B {
+	
+public synchronized void funB(A a1) {
+		
+		System.out.println("Inside funA()");
+		a1.fun1();
+		
+	}
+	public synchronized void fun2() {
+		System.out.println("Inside Fun2");
+		
+	}
+
+}
+
+
+		ThreadA.java
+=======================================
+
+public class ThreadA extends Thread{
+	
+	A a;
+	B b;
+	
+	public ThreadA(A a, B b) {
+		this.a=a;
+		this.b=b;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		a.funA(b);
+
+		
+	}
+
+}
+
+
+		ThreadB.java
+=========================================
+
+public class ThreadB extends Thread {
+
+	
+	A a;
+	B b;
+	
+	public ThreadB(A a, B b) {
+		this.a=a;
+		this.b=b;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		b.funB(a);
+
+		
+	}
+	
+	
+
+}
+
+
+
+		Demo.java
+==================================================
+
+public class Demo {
+
+	public static void main(String[] args) throws Exception {
+		
+		A a1=new A();
+		B b1=new B();
+		
+		ThreadA t1=new ThreadA(a1,b1);
+		ThreadB t2=new ThreadB(a1,b1);
+		
+		t1.start();
+		t2.start();
+		
+		
+		
+	}
+
+}
+
+
+Here in this example after the execution of t1 thread, the command will go to ThreadA class and in that one lock will be occupied the if t2.start()
+execution strats it will have to wait for the A class object lock which is occupied by the ThreadA and in ThreadA will wait for the lock which occupied by
+ThreadB so both will wait for each others lock and this will go to the deadlock situation.
+
+
+Solution:  anyone method in A or B class We need to removed the keyword Synchronized so it will no go to deadlock situation.

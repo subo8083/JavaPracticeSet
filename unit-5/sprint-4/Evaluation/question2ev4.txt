@@ -1,0 +1,55 @@
+Q2)  create table Department(
+				did int primary key,
+				dname varchar(12) not null,
+				location varchar(12) not null
+				);
+
+
+	create table Employee(
+				empid int primary key,
+				ename varchar(12) not null,
+				address varchar(12) not null,
+				mobile varchar(12) not null,
+				salary int not null,
+				depid int
+				Foreign key(depid) references Department(did)
+				);
+
+
+	insert into Department values(11,'Accounts','Banglore');
+	insert into Department values(12,'Sales','Mumbai');
+	insert into Department values(13,'Marketting','Delhi');
+	insert into Department values(14,'HR','Chennai');
+
+
+	insert into Employee values(100,'Suresh','Ranchi','99999999',60000,11);
+	insert into Employee values(101,'Ramesh','Dhanbad','99999977',65000,11);
+	 insert into Employee values(102,'Sita','Patna','99999555',70000,12);
+	insert into Employee values(103,'gita','Sasaram','9999954566',75000,12);
+	 insert into Employee values(104,'babita','Baliya','9999954523',80000,12);
+
+	 insert into Employee values(105,'susrut','banaras','9999954521',90000,13);
+	insert into Employee values(106,'Rahul','lucknow','9999954521',95000,13);
+	 insert into Employee values(108,'vinayak','mumbai','999995498',50000,14);
+
+
+
+==================================================================================================
+
+
+	select * ,sum(salary) from Employee group by depid;
+
+	select * from employee where depid=(select did from Department where dname='Sales');
+
+	select * from Department where did=(select depid from Employee where empid=100);
+	select * from Department where did=(select depid from Employee where empid=101);
+	select * from Department where did=(select depid from Employee where empid=102);
+
+
+	select * from Employee where salary=(select max(salary) from Employee where salary < (select max(salary) from Employee));
+
+
+	
+	
+
+

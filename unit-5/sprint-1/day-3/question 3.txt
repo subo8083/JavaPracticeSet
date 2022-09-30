@@ -1,0 +1,21 @@
+Exceptions in java are the the objects of some classes(Predefined classes) created by JVM to represent the corresponding logical error.
+
+Basically there are two types of errors in java:
+1) syntactical error
+2) logical error
+
+for each logical error there is some pre defined claases in java, whose object willl be created by the jVM whenever it encounters that corresponding logical error.
+
+example:
+
+java.lang.ArithmeticException: This type of exception occur when user try to give wrong inputs like if user try to divide given number to 0 then this will occur.
+
+java.lang.NullPointerException: This type of exception occur when user try to access the methods using null type of object.
+
+java.lang.ClassCastException: If the user try to access Another class object using different type of object which does not belong to the same class i.e not instance of that class object.
+
+java.lang.ArrayOutOfBoundException: if user try to access the index of array which is not allocated in the array then this type of error occurs.
+
+java.lang.NumberMismatchException: If user try to access Number using String object then this type of error occurs.
+
+.

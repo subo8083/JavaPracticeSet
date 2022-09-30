@@ -1,0 +1,87 @@
+Q1ans: String is immutable as if we want to create a String class as   String s1="Welcome"  and now we want to concate this String to "to java" for example:
+ 	
+	String s1="Welcome";
+	S1.concat("To java);
+	System.out.pritnln(s1);// welcome
+
+
+ here the output will be only Welcome and not "Welcome to java" as we the concate method will not do anything with the s1 variable, as this is to be stored in some other variable then we need to call that.
+here the s1 will not be destroyed as it will be there in the SCP area of the RAM. that means if the Object is created it cannot be modified.
+
+String is a class object which belongs to the java.lang package 
+
+StringBuilder is used when we require the mutability since we know that String is immutable so to get mutability we require StringBuilder.
+som of the example of String classes are
+
+String s1=new String("Welcome");
+String s2="Welcome to java";
+
+
+b) When we want to compare two Strings then we use equals methods as we know that String class can be created by two ways:
+1) String s1=new String("welcome");
+2)String s2= "Welcome";
+ both of the strings are same but if we compare them like :
+System.out.println(s1==s2);// false
+
+it will give false as output because we are comparing as a reference variables but when we use equals then the output will be true i.e,
+
+Strings1=new String("Welcome");
+String s2="Welcome";
+System.print.ln(s1==s2);//true
+
+this is because we are comparing as a content variables, since when we use String s1= new String("Welcome"); then the "Welcome" is created in SCP area of RAM whose
+adress is different then from there "Welcome" is copied to S2 but that address is also different thats why it is giving false as output. but when we use equals the Pointer points to the same
+adress and gives the output as true.
+
+
+
+
+
+==========================================================================================================================================================================================
+
+
+
+
+Code Snipped ansawers and explanations:
+
+
+1)
+
+
+String s1 = new String("abc");
+String s2 = new String("abc");
+System.out.println(s1.equals(s2));
+
+
+the output will be true  
+as equals is used and not == so "abc" will be created in SCP area but that address and s2 address of "abc" will point to the same address so gives the output as true.
+
+
+
+2)
+
+
+StringBuilder sb1 = new StringBuilder("abc");
+StringBuilder sb2 = new StringBuilder("abc");
+System.out.println(sb1.equals(sb2));
+
+
+
+the output will be false as StringBuilder is used and it is reference comparison so two objects will be created which then address will be compared so output is false
+
+
+3)
+
+String s1 = new String("abc");
+String s2 = new String("abc");
+System.out.println(s1==s2);
+
+
+here the ouput will be false as again a String will be created in SCP area then it will be copied to heap area and when s2 is created it will be copied from scp and points to the different 
+address and points to s2. as == is used it will be refrence comparison so output will be false.
+
+
+
+
+  
+  

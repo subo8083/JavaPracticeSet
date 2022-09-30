@@ -1,0 +1,74 @@
+When a class having method with same name and different parameters then that is called as method overloading.
+but when a class having method with same name and same parameters and if another class is also having method with same name and parameter and that class
+should be the child class or sub class of the parent class then that will be called as method overriding.
+
+example of method overloading:-
+
+public class Demo{
+
+	void funA(int i)
+	{
+		System.out.println("Inside funA(int i) of Demo");
+	}
+	void funA()
+	{
+		System.out.println("Inside funA()...")
+	}
+	
+}
+
+both of the methods are having same name bujt different parametrs and in th same class so overloading.
+
+
+similarly for overriding:-
+
+
+Demo.java
+==============
+
+
+
+
+// sub-class of A
+
+
+
+
+public class Demo extends A{
+
+	@overriding
+	void funA(int i)
+	{
+		System.out.println("Inside funA(int i) of Demo");
+	}
+
+	@overriding
+	void funA()
+	{
+		System.out.println("Inside funA()...")
+	}
+	
+}
+
+A.java
+===========
+
+
+//parent class
+
+
+ 
+public class A{
+
+	void funA(int i)
+	{
+		System.out.println("Inside funA(int i) of A");
+	}
+	void funA()
+	{
+		System.out.println("Inside funA()...")
+	}
+	
+}
+
+

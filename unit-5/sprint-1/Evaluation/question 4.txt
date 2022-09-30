@@ -1,0 +1,4 @@
+The ouput eill be ACE because first it will move to Try and print A then compiler will see it is divided by zero
+so not possible it will give Arithematic exception so it will not execute further
+then it will move to catch and print B
+then the last catch will noyt be proceed and last E will proceed without any error.

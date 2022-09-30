@@ -1,0 +1,15 @@
+Question 5) 
+
+
+								interface A{
+								int i = 111;
+										}
+								class B implements A{
+								void methodB(){
+								i = 222;
+										}
+			
+						}
+
+this program will not run because we have impemented interface of A into B class within A i=111; and this i will act as final which cannot be reassined to any other value;
+we are trying to change the value of i in class B with as method so this cannot be done.

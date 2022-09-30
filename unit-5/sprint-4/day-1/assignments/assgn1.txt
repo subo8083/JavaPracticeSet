@@ -1,0 +1,98 @@
+create database assgn1;
+
+Q1) use assgn1;
+
+	create  table DEPOSIT(	
+				ACTNO varchar(25),
+				CNAME varchar, BNAME varchar(20), ADATE date
+				);
+
+ii)
+
+		create table BRANCH (	
+				BNAME varchar(25),
+				CITY varchar
+				);
+
+iii)
+
+
+		create  table CUSTOMER (	
+				CNAME varchar(25),
+				CITY varchar(20)
+				);
+
+iv) create table BORROW(
+			LOANNO varchar(5),
+			CNAME varchar(20),
+			BNAME varchar(20),
+			AMOUNT int
+			);
+
+		
+
+
+3)
+
+	insert into DEPOSIT values(100,'ANIL','VRCE',1000,'1995-03-10');
+	insert into DEPOSIT values(101,'SUNL','MGROAD',5000,'1996-01-04');
+	insert into DEPOSIT values(102,'RAHUL','KAROLBAGH',3500,'1995-11-17');
+	insert into DEPOSIT values(103,'MADHURI','MGROAD',1200,'1995-03-17');
+	insert into DEPOSIT values(104,'SANDEEP','KAROLBAGH',3000,'1995-12-17');
+
+
+BRANCH
+==========
+
+	insert into BRANCH values('VRCE',''NAGPUR');
+	insert into BRANCH values('KAROBAGH',''DELHI');
+	insert into BRANCH values('CHANDNI',''DELHI');
+	insert into BRANCH values('MGROAD',''BANGLORE');
+
+CUSTOMER
+==============
+insert into CUSTOMER values('ANIL','CALCUTTA');
+insert into CUSTOMER values('RAHUL','BARODA');
+insert into CUSTOMER('MADHURI','NAGPUR');
+insert into CUSTOMER('PRAMOD','NAGPUR');
+insert into CUSTOMER('SUNIL','DELHI');
+
+
+4) select * from BORROW where AMOUNT BETWEEN 2000 AND 3000;
+
+5) select * from DEPOSIT;
+
+6) select CANAME, ACTNO from DEPOSIT;
+
+7)select CNAME from CUSTOMER where CITY ='NAGPUR';
+
+8) select CNAME from DEPOSIT where adate > '1995-11-17';
+
+9) select ACTNO,AMOUNT from DEPOSIT where adate BETWEEN '1995-12-01' AND '1996-06-01';
+
+10) select * from DEPOSIT where CNAME LIKE 'A%';
+
+11)  select * from BORROW where CNAME LIKE '_U%';
+
+12) select * from DEPOSIT where BNAME='CHANDNI' OR BNAME= 'MGROAD';
+
+13)  select * from DEPOSIT where BNAME!='CHANDNI' AND BNAME!= 'MGROAD';
+
+14) select * from DEPOSIT where amount>1000 order by CNAME;
+
+15) select * from DEPOSIT where amount>1000 order by CNAME desc;
+
+16) select * from BORROW where CNAME LIKE '__A%' OR CNAME LIKE '__D%';
+
+17) select * from BORROW where AMOUNT NOT BETWEEN 2000 AND 8000;
+
+18)  select distinct CNAME from deposit;
+
+19) update DEPOSIT set AMOUNt=AMOUNT+AMOUNT*0.1 where BNAME='VRCE';
+
+20) update DEPOSIT set AMOUNT=AMOUNT+AMOUNT*0.1 where BNAME='VRCE' AND CNAME='ANIL';
+
+
+
+
+	

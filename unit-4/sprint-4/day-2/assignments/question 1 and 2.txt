@@ -1,0 +1,33 @@
+1) Marker Interface:
+
+		
+
+	one class can extends another class and implements multiple interfaces simultaneously.
+but we can have empty interface also,
+
+example:    
+
+class A{									interface X{
+											
+											}
+	
+	
+
+}
+
+
+		and this type of interface is also known as tag or marker interfaces.
+
+some of the predefined marker interfaces in java are:
+
+	java.io.Serialization;
+	java.lang.Clonable;
+
+these type of marker interfaces used to specify certain type of special behaviour of object.
+
+
+
+2) multiple inheritance is not supported by java in class level because of ambiguity, since when one class inherit property of second second class and third class  and if both
+the classes have same property then compiler will get confuse which property to inherit.
+suppose class B inherit class A and Class C also and both class B and class C has same method called display(); then compiler will get confuse which display method it will
+inherit but in case of interface java supports multiple inheritance.

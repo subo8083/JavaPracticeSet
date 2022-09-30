@@ -1,0 +1,28 @@
+Q)3
+		
+
+	there are three relationship exist in tables:
+	
+1)One to one: It involves the relationship between one table to another but it should not be duplicated.
+	for example: one person having a single driving license , multiple driving license is not allowed in case of one
+ to one, so to make this unique we need to mention id as unique in person,
+
+another example is the person and adhar card as single person is having single adhar card.
+
+eg
+=======
+
+	create table Person(pid int primary key, pname varchar(12),address varchar(12));
+	create table DL(dlid int primary key, issueDate varchar(12),expDate varchar(12),personId int unique, foreign key(personId) references Person(pid));
+
+	here we made unique in personID as duplicate can be avoided;
+
+2) One to many: it establishes relation between one table to many tables , for example in the above example if we reomve 
+the unique keyword then duplicate will be posssible so it can be made as One to many type.
+
+
+3) MAny to Many: It establishes the relation between many tables, for example one teacher could have
+many students or one students could have many teachers.
+
+	 
+	

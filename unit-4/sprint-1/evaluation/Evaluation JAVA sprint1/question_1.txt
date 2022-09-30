@@ -1,0 +1,2 @@
+Java is platform independent because the source code or source file is compiled in one platform which then converted into bytecode (.classFile) and this bytecode or (.classfile)
+then can be executed by JVM and gets executed, and since this (.classFile) then executed by another operating system also thats why it is called as platform independent.
