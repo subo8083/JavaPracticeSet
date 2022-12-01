@@ -1,0 +1,42 @@
+1) SELECT avg(eps) AS AvgEPSPerSector, sector from stock GROUP by sector HAVING avg(eps)>10 ORDER by AvgEPSPerSector desc;
+
+2)
+
+SELECT
+  job_id,
+  AVG(salary) AS avg_salary
+FROM
+  employee
+GROUP BY
+  job_id
+ HAVING
+ 	AVG(salary)>10000 
+ORDER BY
+  avg_salary DESC;
+
+
+
+3)
+
+SELECT
+  job_id,
+  AVG(salary) AS avg_salary
+FROM
+  employee
+GROUP BY
+  job_id
+  
+  HAVING
+  AVG(salary)
+  BETWEEN
+  10000 AND 20000
+  
+ORDER BY
+  avg_salary DESC;
+
+4)
+
+select COUNT(o.order_id) as number_of_orders, p.product_id from sale o INNER join product p on
+o.product_id = p.product_id GROUP by  p.category_id HAVING COUNT(o.order_id)>1 order by o.order_id desc;
+
+
